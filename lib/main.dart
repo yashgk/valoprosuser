@@ -1,9 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:valoprosuser/core/constant/sizeconfig.dart';
 import 'package:valoprosuser/ui/homepage.dart';
+import 'package:valoprosuser/ui/player_screen.dart';
+import 'package:valoprosuser/ui/team_screen.dart';
+import 'package:valoprosuser/ui/tournament_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -21,7 +27,7 @@ class MyApp extends StatelessWidget {
         SizeConfig.init(context);
         return test!;
       },
-      home: const HomePage(),
+      home: const TournamentScreen(),
     );
   }
 }

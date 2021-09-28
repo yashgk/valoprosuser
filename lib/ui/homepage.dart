@@ -24,20 +24,20 @@ class _HomePageState extends State<HomePage> {
                   DecorationImage(image: AssetImage('assets/images/bg2.jpg'))),
           child: Column(
             children: const [
-              PlayerTile(
-                right: false,
-              ),
-              PlayerTile(
-                right: true,
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              TeamTile(),
-              SizedBox(
-                height: 50,
-              ),
-              MatchTile()
+              // PlayerTile(
+              //   right: false,
+              // ),
+              // PlayerTile(
+              //   right: true,
+              // ),
+              // SizedBox(
+              //   height: 50,
+              // ),
+              // TeamTile(),
+              // SizedBox(
+              //   height: 50,
+              // ),
+              // MatchTile()
             ],
           )),
     );

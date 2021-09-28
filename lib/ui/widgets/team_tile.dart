@@ -4,13 +4,15 @@ import 'package:valoprosuser/core/constant/app_style.dart';
 import 'package:valoprosuser/core/constant/sizeconfig.dart';
 
 class TeamTile extends StatelessWidget {
-  const TeamTile({Key? key}) : super(key: key);
+  final String name;
+  const TeamTile({required this.name, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(vertical: 10),
       height: SizeConfig.screenHeight! * 0.1,
-      width: SizeConfig.screenWidth! * 0.9,
+      width: SizeConfig.screenWidth! * 0.8,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           color: AppColors.background.withOpacity(0.5)),
@@ -36,10 +38,10 @@ class TeamTile extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            width: 50,
+            width: 90,
           ),
           Text(
-            'TEAM NAME',
+            name,
             style: AppStyles.blackNormal18.copyWith(color: AppColors.white),
           )
         ],

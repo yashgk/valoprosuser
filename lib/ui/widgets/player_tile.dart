@@ -5,7 +5,9 @@ import 'package:valoprosuser/core/constant/sizeconfig.dart';
 
 class PlayerTile extends StatelessWidget {
   final bool right;
-  const PlayerTile({required this.right, Key? key}) : super(key: key);
+  final String name;
+  const PlayerTile({required this.name, required this.right, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +23,14 @@ class PlayerTile extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: AppColors.background.withOpacity(0.5),
+            ),
+            child: Center(
+              child: Text(
+                name,
+                style: AppStyles.blackNormal18.copyWith(
+                  color: AppColors.white,
+                ),
+              ),
             ),
           ),
           Positioned(
