@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:valoprosuser/core/constant/sizeconfig.dart';
 import 'package:valoprosuser/ui/homepage.dart';
-import 'package:valoprosuser/ui/player_screen.dart';
-import 'package:valoprosuser/ui/team_screen.dart';
-import 'package:valoprosuser/ui/tournament_screen.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +25,7 @@ class MyApp extends StatelessWidget {
         SizeConfig.init(context);
         return test!;
       },
-      home: const TournamentScreen(),
+      home: const HomePage(),
     );
   }
 }
