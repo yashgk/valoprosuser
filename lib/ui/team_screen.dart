@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:valoprosuser/core/constant/sizeconfig.dart';
+import 'package:valoprosuser/ui/team_details.dart';
 import 'package:valoprosuser/ui/widgets/team_tile.dart';
 
 class TeamScreen extends StatefulWidget {
@@ -52,8 +53,19 @@ class _TeamScreenState extends State<TeamScreen> {
                       shrinkWrap: true,
                       itemCount: teamList.length,
                       itemBuilder: (context, index) {
-                        return TeamTile(
-                          name: teamList[index],
+                        return InkWell(
+                          onTap: () {
+                            showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return TeamDetails(
+                                    teamName: teamList[index],
+                                  );
+                                });
+                          },
+                          child: TeamTile(
+                            name: teamList[index],
+                          ),
                         );
                       }),
                 )),

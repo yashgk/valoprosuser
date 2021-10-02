@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:valoprosuser/core/constant/sizeconfig.dart';
+import 'package:valoprosuser/ui/player_details.dart';
 import 'package:valoprosuser/ui/widgets/player_tile.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -28,7 +29,11 @@ class _PlayerScreenState extends State<PlayerScreen> {
       isLoading = false;
     });
   }
-
+@override
+  void dispose() {
+    
+    super.dispose();
+  }
   @override
   void initState() {
     getPlayers();
@@ -46,15 +51,26 @@ class _PlayerScreenState extends State<PlayerScreen> {
                   DecorationImage(image: AssetImage('assets/images/bg2.jpg'))),
           child: isLoading
               ? const Center(child: CircularProgressIndicator())
-              : Container(
+              : Padding(
+                  padding: const EdgeInsets.only(bottom: 70),
                   child: ListView.builder(
                       itemCount: playerList.length,
                       itemBuilder: (context, index) {
-                        return PlayerTile(
-                          right: index % 2 == 0 ? true : false,
-                          name: playerList[index],
+                        return InkWell(
+                          onTap: () {
+                            showDialog(
+                                context: context,
+                                builder: (context) => PlayerDetail(
+                                      playerName: playerList[index],
+                                    ));
+                          },
+                          child: PlayerTile(
+                            right: index % 2 == 0 ? true : false,
+                            name: playerList[index],
+                          ),
                         );
-                      }))),
+                      }),
+                )),
     );
   }
 }
