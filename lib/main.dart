@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:valoprosuser/core/constant/sizeconfig.dart';
 import 'package:valoprosuser/ui/homepage.dart';
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -29,3 +28,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+// KEM CHOOO
